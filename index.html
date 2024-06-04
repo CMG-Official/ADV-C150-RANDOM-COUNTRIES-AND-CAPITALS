@@ -1,0 +1,100 @@
+
+<html>
+<head>
+  <title>ADV-C150: RANDOM COUNTRIES AND CAPITALS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+  <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Skranji&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<center>
+<h1 class="titl">ADV-C150: RANDOM COUNTRIES AND CAPITALS</h1>
+<br>
+<br>
+<br>
+    <video width="400" controls>
+        <source src="vid.mp4" muted="muted" type="video/mp4">
+    </video>
+    <br>
+    <br>
+    <br>
+    <pre>
+      <code>
+          from tkinter import *
+          from tkmacosx import *
+          import random
+
+          root = Tk()
+          root.title("A real root window")
+          root.geometry("400x400")
+          root.configure(background = 'skyblue')
+
+
+          country_name = Entry(root)
+          country_name.place(relx = 0.5, rely = 0.2, anchor = CENTER)
+
+          capital_name = Entry(root)
+          capital_name.place(relx = 0.5, rely = 0.3, anchor = CENTER)
+
+          capital_list = Label(root)
+          country_list = Label(root)
+          capital_random = Label(root)
+          country_random = Label(root)
+
+          country_list1 = []
+          capital_list1 = []
+          def input_data():
+              country = country_name.get()
+              country_list1.append(country)
+              country_list["text"] = "Country Name : " + str(country_list1)
+
+              capital = capital_name.get()
+              capital_list1.append(capital)
+              capital_list["text"] = "Capital Name : " + str(capital_list1)
+
+          def random1():
+              length = len(country_list1)
+              random_no = random.randint(0, length-1)
+              index = country_list1[random_no]
+              country_random["text"] = "Random Country : " + str(index)
+
+              length1 = len(capital_list1)
+              random_no1 = random.randint(0, length1-1)
+              index1 = capital_list1[random_no1]
+              capital_random["text"] = "Random Capital : " + str(index1)
+
+          btn = Button(root, text = "Add Country and Capital Name(+)", command = input_data, bg = "green", fg = "white")
+          btn.place(relx = 0.5, rely = 0.4, anchor = CENTER)
+
+          country_list.place(relx = 0.5, rely = 0.5, anchor = CENTER)
+          capital_list.place(relx = 0.5, rely = 0.6, anchor = CENTER)
+
+          btn1 = Button(root, text = "Display Random", command = random1, bg = "Green", fg = "white")
+          btn1.place(relx = 0.5, rely = 0.7, anchor = CENTER)
+
+          country_random.place(relx = 0.5, rely = 0.8, anchor = CENTER)
+          capital_random.place(relx = 0.5, rely = 0.9, anchor = CENTER)
+
+          root.mainloop()
+      </code>
+    </pre>
+    
+<div class="contn">
+
+</div>
+</center>
+<div class="copyright_footer"> Devloped By : Tejas</div>
+</body>
+<script src="main.js"></script>
+</html>
+
+
